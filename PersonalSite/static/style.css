@@ -1,5 +1,40 @@
 ﻿/* Styling goes here */
 
-body
-{
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.pad-section {
+  padding: 50px 0;
+}
+
+
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.text-vcenter h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+#home {
+  /*background: url(../static/images/home.jpg) no-repeat center center fixed;*/
+
+  background-color: darkturquoise; /*Placeholder till image added*/
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+#skills {
+  background-color: #306d9f;
+  color: #ffffff;
 }
