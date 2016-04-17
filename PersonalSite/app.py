@@ -15,8 +15,7 @@ wsgi_app = app.wsgi_app
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
-
+    return render_template('index.html', name='Jacob Turpin')
 
 @app.route('/test')
 def hello():

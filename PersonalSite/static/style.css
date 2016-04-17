@@ -34,7 +34,24 @@ html, body {
   background-size: cover;
 }
 
+#profile {
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+}
+
+
 #skills {
   background-color: #306d9f;
+  color: #ffffff;
+}
+
+#health {
+  background-color: crimson;
+  color: #ffffff;
+}
+
+#engage {
+  background-color: slateblue;
   color: #ffffff;
 }
