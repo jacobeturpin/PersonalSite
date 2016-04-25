@@ -1,34 +1,27 @@
-import twitter
+from twitter import *
 from config import *
 
 
-''' ---------------------- '''
-''' PYTHON-TWITTER PACKAGE '''
-''' ---------------------- '''
-'''
-api = twitter.Api(consumer_key=TWITTER_CONSUMER_KEY,
-                  consumer_secret=TWITTER_CONSUMER_SECRET,
-                  access_token_key=TWITTER_ACCESS_TOKEN,
-                  access_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
+def get_twitter_data():
 
-if __name__ == '__main__':
-    print(api)
+    t = Twitter(auth=OAuth(TWITTER_ACCESS_TOKEN, 
+                           TWITTER_ACCESS_TOKEN_SECRET,
+                           TWITTER_CONSUMER_KEY, 
+                           TWITTER_CONSUMER_SECRET))
+    profile = t.account.verify_credentials()
+    tweets = t.statuses.user_timeline(count=5)
 
-    test = api.GetUserTimeline()
-    print(test)
-'''
+    return profile, tweets
 
-
-''' --------------- '''
-''' TWITTER PACKAGE '''
-''' --------------- '''
 
 if __name__ == '__main__':
     
-    t = twitter.Twitter(auth=twitter.OAuth(TWITTER_ACCESS_TOKEN, 
-                                           TWITTER_ACCESS_TOKEN_SECRET,
-                                           TWITTER_CONSUMER_KEY, 
-                                           TWITTER_CONSUMER_SECRET))
-    test = t.statuses.home_timeline()
-    print(len(test))
-    print(test[0]['user'])
+    t = Twitter(auth=OAuth(TWITTER_ACCESS_TOKEN, 
+                           TWITTER_ACCESS_TOKEN_SECRET,
+                           TWITTER_CONSUMER_KEY, 
+                           TWITTER_CONSUMER_SECRET))
+    test_profile = t.account.verify_credentials()
+    test_tweets = t.statuses.user_timeline(count=5)
+
+    print(test_profile)
+    print(test_tweets[4])

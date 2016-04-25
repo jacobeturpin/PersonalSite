@@ -3,6 +3,8 @@ This script runs the application using a development server.
 It contains the definition of routes and views for the application.
 """
 
+import twitterdata
+
 from flask import Flask
 from flask import render_template
 
@@ -17,9 +19,18 @@ wsgi_app = app.wsgi_app
 def index():
     return render_template('index.html', name='Jacob Turpin')
 
+
+@app.route('/GetTwitterData')
+def twitter_data():
+    profile, tweets = twitter_data.get_twitter_data()
+    
+    return "Twitter Data Will Go Here"
+
+
 @app.route('/test')
 def hello():
     return "Testing"
+
 
 if __name__ == '__main__':
     import os
