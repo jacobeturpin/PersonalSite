@@ -5,7 +5,7 @@ It contains the definition of routes and views for the application.
 
 import twitterdata
 
-from flask import Flask
+from flask import Flask, jsonify
 from flask import render_template
 
 app = Flask(__name__)
@@ -22,9 +22,9 @@ def index():
 
 @app.route('/GetTwitterData')
 def twitter_data():
-    profile, tweets = twitter_data.get_twitter_data()
-    
-    return "Twitter Data Will Go Here"
+    profile, tweets = twitterdata.get_twitter_data()
+    return jsonify(profile_data = profile,
+                   tweet_data = tweets)
 
 
 @app.route('/test')
