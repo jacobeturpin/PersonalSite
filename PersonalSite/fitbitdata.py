@@ -1,6 +1,5 @@
 import fitbit
 import config
-import requests
 
 # Based upon a modified version of Paul Weeks' example
 # http://pdwhomeautomation.blogspot.co.uk/2016/01/fitbit-api-access-using-oauth20-and.html
