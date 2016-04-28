@@ -26,9 +26,24 @@ def twitter_data():
     return jsonify(profile_data = profile,
                    tweet_data = tweets)
 
+@app.route('/GetFitBitData')
+def fitbit_data():
+    return "FitBit Data Goes Here"
+
+
+@app.route('/GetGitHubData')
+def github_data():
+    return "GitHub Data Goes Here"
+
+
+@app.route('/GetLinkedInData')
+def linkedin_data():
+    return "LinkedIn Data Goes Here"
+
 
 @app.route('/test')
 def hello():
+    ''' Simple route left purely for identifying whether it's possible to successfully reach the site ''' 
     return "Testing"
 
 
