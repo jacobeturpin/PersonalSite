@@ -14,7 +14,13 @@ authd_client = fitbit.Fitbit(config.FITBIT_CONSUMER_KEY,
 
 if __name__ == '__main__':
 
+    #authd_client.client.refresh_token()
+
     test = authd_client.get_devices()
+
+    #data = authd_client.user_profile_get()
+
+    #print(data)
     print(test)
 
     print('Testing FitBit package')

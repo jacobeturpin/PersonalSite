@@ -110,3 +110,10 @@ $RECYCLE.BIN/
 *.sln
 PersonalSite/PersonalSite.pyproj
 PersonalSite/config.py
+
+# Visual Studio
+obj/
+bin/
+*.config
+*ptvs*
+
